@@ -1,7 +1,23 @@
-import React from "react";
-import { Plane, Globe } from "lucide-react";
+import React, { useState } from "react";
+import { Plane, Globe, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    !!localStorage.getItem("userEmail")
+  );
+
+  const handleBookNow = () => {
+    if (!isLoggedIn) {
+      alert("Please sign up or login before booking a flight ✈️");
+      navigate("/signup");
+    } else {
+      navigate("/booking");
+    }
+  };
+
   return (
     <div className="relative w-full h-screen bg-linear-to-r from-blue-700 via-indigo-800 to-purple-700 overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
@@ -19,10 +35,17 @@ const HeroSection = () => {
             Experience seamless, fast, and reliable flight services worldwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
-            <button className="px-8 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-xl hover:bg-yellow-500 hover:scale-105 transition-transform duration-300 animate-bounce-slow">
+            <button
+              onClick={handleBookNow}
+              className="px-8 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-xl hover:bg-yellow-500 hover:scale-105 transition-transform duration-300 animate-bounce-slow"
+            >
               Book Now
             </button>
-            <button className="px-8 py-3 border border-white text-white rounded-full hover:bg-white hover:text-blue-900 transition duration-300 animate-bounce-slow delay-100">
+
+            <button
+              onClick={() => setShowModal(true)}
+              className="px-8 py-3 border border-white text-white rounded-full hover:bg-white hover:text-blue-900 transition duration-300 animate-bounce-slow delay-100"
+            >
               Learn More
             </button>
           </div>
@@ -45,6 +68,44 @@ const HeroSection = () => {
           Fast Booking
         </div>
       </div>
+
+      {showModal && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 animate-fadeIn">
+          <div className="bg-white rounded-2xl shadow-2xl w-11/12 max-w-2xl p-8 relative">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-blue-800 hover:text-red-500 transition"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <h2 className="text-3xl font-bold text-blue-900 mb-4 text-center">
+              About AirFly
+            </h2>
+            <p className="text-gray-700 leading-relaxed text-center">
+              Welcome to{" "}
+              <span className="text-blue-700 font-semibold">AirFly</span>, your
+              trusted partner in modern air travel. Our mission is to make
+              booking and managing flights effortless and enjoyable. With over
+              500+ destinations worldwide, we provide reliable schedules,
+              real-time updates, and a user-friendly booking experience.
+              <br />
+              <br />
+              Whether you're traveling for business or leisure, AirFly ensures
+              comfort, speed, and safety every step of the way.
+            </p>
+
+            <div className="mt-6 flex justify-center">
+              <button
+                onClick={() => setShowModal(false)}
+                className="px-8 py-3 bg-blue-800 text-white rounded-full font-semibold hover:bg-blue-900 transition duration-300"
+              >
+                Got It
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
