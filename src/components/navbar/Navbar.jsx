@@ -12,9 +12,9 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center px-12 py-6 bg-linear-to-r from-blue-500 to-indigo-600 shadow-lg">
-      <div className="text-4xl font-extrabold text-white tracking-wider hover:scale-105 transition-transform duration-300">
+      <div className="text-xl font-extrabold text-white tracking-wider hover:scale-105 transition-transform duration-300">
         <NavLink to="/homepage">
-          <Plane />
+          AIRLINE-RESERVATION 
         </NavLink>
       </div>
 

@@ -29,7 +29,7 @@ const Login = () => {
     <div className="flex items-center justify-center min-h-screen bg-linear-to-b from-blue-900 to-indigo-700">
       <div className="relative w-full max-w-lg bg-linear-to-br from-white/90 to-white/70 backdrop-blur-md rounded-2xl shadow-2xl p-10">
         <div className="flex justify-center mb-6">
-          <Plane className="w-12 h-12 text-blue-800 animate-bounce" />
+          <Plane className="w-12 h-12 text-blue-800" />
         </div>
 
         <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center tracking-wide">

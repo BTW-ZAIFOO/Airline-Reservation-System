@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-blue-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 md:grid-cols-4 gap-10">
         <div>
-          <h2 className="text-2xl font-bold mb-4">LOGO</h2>
+          <h2 className="text-xl font-bold mb-4">AIRLINE-RESERVATION</h2>
           <p className="text-gray-300">
             Fly beyond limits with our seamless, fast, and reliable flight
             services worldwide.

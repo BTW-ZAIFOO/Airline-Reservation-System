@@ -3,7 +3,7 @@ import { Plane, Globe } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-screen bg-linear-to-r from-blue-700 via-indigo-800 to-purple-700 overflow-hidden">
+    <div className="relative w-full h-screen bg-linear-to-r from-blue-700 via-indigo-800 to-purple-700 overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute w-72 h-72 bg-blue-400/30 rounded-full -top-20 -left-20 animate-ping"></div>
         <div className="absolute w-96 h-96 bg-indigo-400/20 rounded-full -bottom-32 -right-32 animate-ping delay-500"></div>
@@ -45,7 +45,7 @@ const HeroSection = () => {
           Fast Booking
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
