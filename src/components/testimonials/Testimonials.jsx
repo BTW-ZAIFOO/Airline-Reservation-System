@@ -22,6 +22,27 @@ const testimonialsData = [
     message:
       "Amazing booking experience and great customer service. Highly recommended for family trips!",
   },
+  {
+    name: "Kane Wilson",
+    role: "Adventure Seeker",
+    avatar: "https://randomuser.me/api/portraits/men/22.jpg",
+    message:
+      "The variety of destinations is incredible! I was able to explore new places with ease thanks to their seamless booking system.",
+  },
+  {
+    name: "Emily Davis",
+    role: "Frequent Flyer",
+    avatar: "https://randomuser.me/api/portraits/women/14.jpg",
+    message:
+      "Their fast and reliable flight services have made my travels so much more enjoyable. Highly recommend!",
+  },
+  {
+    name: "Quinn Taylor",
+    role: "Business Executive",
+    avatar: "https://randomuser.me/api/portraits/men/76.jpg",
+    message:
+      "The 24/7 support team is fantastic! They assisted me promptly during a last-minute change to my itinerary.",
+  },
 ];
 
 const Testimonials = () => {

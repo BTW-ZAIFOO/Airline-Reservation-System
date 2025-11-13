@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Plane } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [form, setForm] = useState({ email: "", password: "" });
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (
+      storedUser &&
+      storedUser.email === form.email &&
+      storedUser.password === form.password
+    ) {
+      alert("Login successful!");
+      // Redirect to booking page
+      navigate("/booking");
+    } else {
+      alert("Invalid credentials!");
+    }
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-linear-to-b from-blue-900 to-indigo-700">
-      <div className="relative w-full max-w-lg bg-linear-to-br from-white/90 to-white/70 backdrop-blur-md rounded-2xl shadow-2xl p-10 animate-fadeIn">
+      <div className="relative w-full max-w-lg bg-linear-to-br from-white/90 to-white/70 backdrop-blur-md rounded-2xl shadow-2xl p-10">
         <div className="flex justify-center mb-6">
           <Plane className="w-12 h-12 text-blue-800 animate-bounce" />
         </div>
@@ -13,22 +36,34 @@ const Login = () => {
           Welcome Back
         </h2>
 
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleSubmit}>
           <div>
-            <label className="text-blue-900 font-semibold mb-1 block">Email</label>
+            <label className="text-blue-900 font-semibold mb-1 block">
+              Email
+            </label>
             <input
               type="email"
+              name="email"
               placeholder="john@example.com"
-              className="w-full px-5 py-3 rounded-xl border border-blue-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-1 shadow-sm"
+              value={form.email}
+              onChange={handleChange}
+              className="w-full px-5 py-3 rounded-xl border border-blue-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
             />
           </div>
 
           <div>
-            <label className="text-blue-900 font-semibold mb-1 block">Password</label>
+            <label className="text-blue-900 font-semibold mb-1 block">
+              Password
+            </label>
             <input
               type="password"
+              name="password"
               placeholder="********"
-              className="w-full px-5 py-3 rounded-xl border border-blue-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-1 shadow-sm"
+              value={form.password}
+              onChange={handleChange}
+              className="w-full px-5 py-3 rounded-xl border border-blue-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
             />
           </div>
 
@@ -42,7 +77,10 @@ const Login = () => {
 
         <p className="mt-6 text-center text-blue-800">
           Don't have an account?{" "}
-          <a href="/signup" className="text-yellow-400 font-semibold hover:underline">
+          <a
+            href="/signup"
+            className="text-yellow-400 font-semibold hover:underline"
+          >
             Sign Up
           </a>
         </p>

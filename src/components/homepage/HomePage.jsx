@@ -8,11 +8,11 @@ import Flights from "../flights/Flights";
 const HomePage = () => {
   return (
     <>
-        <HeroSection />
-        <About />
-        <Services />
-        <Testimonials />
-        <Flights />
+      <HeroSection />
+      <About />
+      <Services />
+      <Testimonials />
+      <Flights />
     </>
   );
 };
