@@ -62,15 +62,15 @@ const Confirmation = ({ bookingData }) => {
         🏆
       </div>
 
-      <div className="w-full max-w-4xl bg-white/5 backdrop-blur-2xl rounded-3xl shadow-2xl p-8 border border-white/10 relative z-10 transform hover:scale-[1.01] transition-all duration-500">
+      <div className="w-full max-w-4xl bg-white/5 backdrop-blur-2xl rounded-3xl shadow-2xl p-10 md:p-16 border border-white/10 relative z-10 transform hover:scale-[1.01] transition-all duration-500 my-10">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-24 h-24 bg-linear-to-r from-green-400 to-cyan-500 rounded-full mb-4 shadow-lg">
             <span className="text-4xl">✅</span>
           </div>
-          <h2 className="text-4xl font-bold bg-linear-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold bg-linear-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent mb-3">
             Booking Confirmed!
           </h2>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-300 text-sm md:text-lg">
             Your adventure awaits! Here's your booking summary
           </p>
           <div className="inline-block mt-2 px-4 py-1 bg-green-500/20 border border-green-400/30 rounded-full">
@@ -203,22 +203,19 @@ const Confirmation = ({ bookingData }) => {
             onClick={() => navigate("/homepage")}
             className="flex-1 py-4 bg-linear-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center"
           >
-            <span className="mr-2">🏠</span>
-            Back to Home
+            <span className="mr-2">🏠</span> Back to Home
           </button>
           <button
             onClick={() => window.print()}
             className="flex-1 py-4 bg-linear-to-r from-purple-500 to-pink-600 text-white font-bold rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center"
           >
-            <span className="mr-2">🖨️</span>
-            Print Confirmation
+            <span className="mr-2">🖨️</span> Print Confirmation
           </button>
           <button
             onClick={() => navigate("/booking")}
             className="flex-1 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-2xl hover:bg-cyan-400 hover:text-white transition-all duration-300 flex items-center justify-center"
           >
-            <span className="mr-2">✈️</span>
-            New Booking
+            <span className="mr-2">✈️</span> New Booking
           </button>
         </div>
 

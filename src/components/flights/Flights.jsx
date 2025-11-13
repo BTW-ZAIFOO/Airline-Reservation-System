@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Plane } from "lucide-react";
 
 const flightsData = [
@@ -29,23 +30,36 @@ const flightsData = [
 ];
 
 const Flights = () => {
+  const navigate = useNavigate();
+
+  const handleBookNow = (flight) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user) {
+      alert("Please sign up or log in first to book a flight ✈️");
+      navigate("/signup");
+    } else {
+      navigate("/booking", { state: { flight } });
+    }
+  };
+
   return (
-    <div className="py-24 bg-gray-50">
+    <div className="py-24 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold text-gray-900">
-            Available Flights
+            ✈️ Available Flights
           </h2>
           <p className="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
             Browse and book flights from top destinations worldwide.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {flightsData.map((flight, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl shadow-lg p-6 flex flex-col justify-between hover:scale-105 transition-transform duration-300"
+              className="bg-white rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 p-6 flex flex-col justify-between"
             >
               <div className="flex items-center gap-3 mb-4">
                 <Plane className="w-6 h-6 text-blue-600" />
@@ -54,7 +68,7 @@ const Flights = () => {
                 </h3>
               </div>
 
-              <div className="text-gray-600 mb-4 space-y-1">
+              <div className="text-gray-600 mb-6 space-y-2">
                 <p>
                   <span className="font-semibold">Date:</span> {flight.date}
                 </p>
@@ -72,7 +86,10 @@ const Flights = () => {
                 <span className="text-xl font-bold text-blue-600">
                   {flight.price}
                 </span>
-                <button className="px-4 py-2 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow hover:bg-yellow-500 hover:scale-105 transition-transform duration-300">
+                <button
+                  onClick={() => handleBookNow(flight)}
+                  className="px-5 py-2 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow hover:bg-yellow-500 hover:scale-105 transition-all duration-300"
+                >
                   Book Now
                 </button>
               </div>
