@@ -1,24 +1,26 @@
-import React from 'react';
+import React from "react";
 
-// Example testimonials data (can be replaced or fetched dynamically)
 const testimonialsData = [
   {
     name: "John Doe",
     role: "Frequent Traveler",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    message: "Booking flights has never been easier! The process is fast, reliable, and stress-free."
+    message:
+      "Booking flights has never been easier! The process is fast, reliable, and stress-free.",
   },
   {
     name: "Jane Smith",
     role: "Business Traveler",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    message: "I love the global destinations and 24/7 support. This airline makes my business trips smooth."
+    message:
+      "I love the global destinations and 24/7 support. This airline makes my business trips smooth.",
   },
   {
     name: "Michael Lee",
     role: "Vacation Planner",
     avatar: "https://randomuser.me/api/portraits/men/56.jpg",
-    message: "Amazing booking experience and great customer service. Highly recommended for family trips!"
+    message:
+      "Amazing booking experience and great customer service. Highly recommended for family trips!",
   },
 ];
 
@@ -26,15 +28,15 @@ const Testimonials = () => {
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-gray-900">What Our Customers Say</h2>
+          <h2 className="text-4xl font-extrabold text-gray-900">
+            What Our Customers Say
+          </h2>
           <p className="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
             Hear from travelers who have experienced seamless journeys with us.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {testimonialsData.map((testimonial, index) => (
             <div
@@ -46,7 +48,9 @@ const Testimonials = () => {
                 alt={testimonial.name}
                 className="w-20 h-20 rounded-full mb-4 shadow-md"
               />
-              <h3 className="text-xl font-semibold text-gray-900">{testimonial.name}</h3>
+              <h3 className="text-xl font-semibold text-gray-900">
+                {testimonial.name}
+              </h3>
               <p className="text-gray-500 mb-4">{testimonial.role}</p>
               <p className="text-gray-600 italic">"{testimonial.message}"</p>
             </div>
