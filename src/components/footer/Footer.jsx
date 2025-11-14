@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Send, Plane } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -12,8 +12,9 @@ const Footer = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 md:grid-cols-4 gap-10 z-10">
         <div className="space-y-3">
-          <h2 className="text-2xl font-bold tracking-wide">
-            AIRLINE-RESERVATION
+          <h2 className="text-2xl font-bold tracking-wide flex items-center gap-2 mb-4">
+            <Plane className="w-6 h-6" />
+            RESERVATION
           </h2>
           <p className="text-gray-300 leading-relaxed">
             Fly beyond limits with our seamless, fast, and reliable flight

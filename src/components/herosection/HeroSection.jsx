@@ -26,7 +26,7 @@ const HeroSection = () => {
         <div className="absolute w-40 h-40 sm:w-56 sm:h-56 bg-purple-500/20 rounded-full top-1/3 left-1/2 transform -translate-x-1/2 animate-bounce-slow"></div>
       </div>
 
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-24 sm:py-32 gap-10">
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto sm:px-10 lg:px-16 py-24 sm:py-32 gap-44">
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight animate-fade-in-down whitespace-nowrap">
             Fly Beyond Limits
